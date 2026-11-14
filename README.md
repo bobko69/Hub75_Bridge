@@ -26,7 +26,7 @@ You can buy the HUB75 Bridge [on Tindie](https://www.tindie.com/products/bong69/
 - **HUB75 LED panels.** Indoor panels in common sizes work: 32 × 16, 32 × 32, 64 × 32, 64 × 64, 128 × 32 and 128 × 64. Check the scan rate and driver chip before you buy: see [Which panels work?](#which-panels-work)
 - **A 5 V power supply** big enough for your panels. The board needs very little: 5 V on its binding post from the same supply, or a USB-C phone charger.
 - **An Ethernet cable** to your network, or straight to your computer.
-- **Something that sends DDP**: [xLights](https://xlights.org/), our free [DDP Streamer](https://github.com/bobko69/ddp-streamer) (plays videos, your screen or a camera), or any other DDP sender.
+- **Something that sends DDP**: [xLights](https://xlights.org/), [FPP](#can-i-use-it-with-fpp-falcon-player), our free [DDP Streamer](https://github.com/bobko69/ddp-streamer) (plays videos, your screen or a camera), or any other DDP sender.
 - **HUB75 ribbon cables** between the board and the first panel on each port. Your panels usually come with them.
 
 ## Quick start guide
@@ -125,6 +125,17 @@ Once our controller file is in xLights, Discover will show the board as Vendor *
 
 ## Can I use it without xLights?
 Yes. Anything that sends DDP (UDP port 4048) works. In the DDP Streamer, click **Find boards** and pick the bridge. Our free [DDP Streamer](https://github.com/bobko69/ddp-streamer) for Windows, Mac and Linux plays videos and playlists, mirrors your screen, or shows a camera on the wall, and can span one picture across several bridges. Set the picture size to the **Picture size** shown on the board's Settings page.
+
+## Can I use it with FPP (Falcon Player)?
+Yes. FPP sends DDP, so it can play your show to the bridge on its own, without a PC. We ran an FPP show sequence into a bridge for 12 hours: every frame drawn at 20 fps, no restarts.
+1. Add the bridge to xLights first, as [above](#how-do-i-add-the-hub75-bridge-to-xlights).
+2. In xLights, open **FPP Connect**. In your FPP's row, set **UDP Out** to **All**, tick the sequences you want, and click **Upload**. FPP then gets the bridge as a DDP output with the right channels, along with your sequences. You can also add the bridge by hand in FPP under **Channel Outputs** as a DDP output with its IP address, start channel and channel count (picture width × height × 3).
+3. Play your sequences from FPP as usual.
+
+Good to know:
+- **One sender at a time.** If FPP and xLights both send to the bridge, the two streams overwrite each other and the wall flickers. Stop the FPP playlist while you test from xLights, or the other way around.
+- **Give the bridge an address nothing else uses.** Before you pick a fixed IP address, check FPP's list of outputs, not just a ping: props that are off for the season don't answer pings, but FPP still sends to them.
+- **Frame rate** comes from the sequence's timing: 50 ms = 20 fps, 25 ms = 40 fps. See [How many panels can it run?](#how-many-panels-can-it-run) for what your wall can draw.
 
 ## How do I change the brightness?
 Settings page, **Brightness (%)**. The wall changes as you move the slider and the setting is saved when you let go, with no reboot. Lower brightness also means less heat in the panels.
