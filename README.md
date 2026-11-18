@@ -106,22 +106,30 @@ Sometimes panels have to be turned over so the cables reach. Under the panel map
 ## How do I add the HUB75 Bridge to xLights?
 1. Give the board a **fixed IP address** first (Settings page, **IP address: Fixed**).
 2. On the **Controllers** tab, click **Discover**. The board shows up as a DDP controller. You can also click **Add Ethernet** and type in its IP address.
-3. Select the board and set:
+3. Select the board and check:
    - **Protocol**: DDP
    - **Keep Channel Numbers**: **unticked**. This one matters: with it ticked, xLights sends the wrong channel numbers and the panels stay dark.
-   - **Channels**: picture width × height × 3. For a 256 × 128 wall that's 98304.
+   - **Auto Size**: ticked. **Channels** then fills in by itself in step 5. (With Auto Size off, type in picture width × height × 3: 98304 for a 256 × 128 wall.)
 4. Click **Save**.
-5. On the **Layout** tab, add a **Matrix** model:
+
+   ![xLights controller settings for the HUB75 Bridge](img/xlights_1.png)
+
+5. On the **Models** tab, add a **Matrix** model:
    - **Direction**: Horizontal
+   - **Don't Zig Zag**: ticked
    - **# Strings**: the picture height (128 for a 256 × 128 wall)
    - **Nodes/String**: the picture width (256)
    - **Strands/String**: 1
    - **Starting Location**: Top Left
-   - **Don't Zig Zag**: ticked
-   - **Start channel**: the start of the board's controller (channel 1 on it)
-6. Save, and play a sequence.
+   - **Controller**: your board. xLights sets the start channel (channel 1 on the board) and leaves Port at 0.
 
-Once our controller file is in xLights, Discover will show the board as Vendor **Bong 69**, Model **HUB75 Bridge**, and untick Keep Channel Numbers for you.
+   ![xLights Matrix model settings for a 256 × 128 wall](img/xlights_2.png)
+
+6. Save, and play a sequence. On the Controllers tab, the board's **Channels** now shows width × height × 3 (98304 here).
+
+The picture size is shown on the board's Settings page as **Picture size**.
+
+Once our controller file is in xLights, Discover will show the board as Vendor **Bong 69**, Model **HUB75 Bridge** (as in the picture above), and untick Keep Channel Numbers for you.
 
 ## Can I use it without xLights?
 Yes. Anything that sends DDP (UDP port 4048) works. In the DDP Streamer, click **Find boards** and pick the bridge. Our free [DDP Streamer](https://github.com/bobko69/ddp-streamer) for Windows, Mac and Linux plays videos and playlists, mirrors your screen, or shows a camera on the wall, and can span one picture across several bridges. Set the picture size to the **Picture size** shown on the board's Settings page.
