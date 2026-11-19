@@ -156,6 +156,19 @@ Settings page, **Brightness (%)**. The wall changes as you move the slider and t
 
 Click **Show fade test on the wall** to see the difference while you change them. Leave **Advanced color settings** alone unless you see a problem; each one has a short explanation on the page.
 
+## One of my panels doesn't match the others
+Panels from different production lots can look a little brighter, dimmer or tinted next to each other, so a panel bought later often stands out. The **Panel Matching** page fixes this (firmware 2.8.0 or newer). Open it from the Settings page, under **Panel Layout**: **Match panels from different lots**.
+
+1. **Show a test shade.** Click **Mid gray**. The whole wall turns one even gray, so the odd panel and its tint are easy to see. Every panel shows its port-panel label (2-3 = Port 2, Panel 3).
+2. **Put the odd panels in a lot.** Click **Lot B**, then click the odd panels on the map. Up to 3 extra lots (B, C and D) for panels from more batches.
+3. **Adjust until they match.** Turn the lot's **Red**, **Green** and **Blue** down with the sliders or with **−** and **+** (1 % steps). The wall changes right away. The chart on the page tells you which color to lower: a pinkish panel needs less red, a bluish one less blue, and one that's just brighter needs all three lowered. If the odd panel is the dimmer one, turn **Normal** down instead.
+4. **Check White and Dark gray.** If the panel still looks too bright in dark scenes, lower the lot's **Dark** level; it changes only the darker shades.
+5. **Click Save.** Leaving the page without saving undoes your changes, and the test shade stops by itself after 15 minutes.
+
+Matching by eye takes some patience, and panels from different lots may never match perfectly on every shade. Match on **Mid gray**, which is closest to most video. Lots are kept in the settings backup. Changing the wall size puts every panel back in Normal.
+
+![The Panel Matching page: test shades, the wall map with panel 1-3 in Lot B, and the red, green, blue and dark levels for each lot](./img/panel_matching.png)
+
 ## What is the E switch for?
 64 × 64 panels need a fifth row address line, called E. The small switch near the ports picks which pin of the HUB75 connector carries it: **pin 8** for most 64 × 64 panels, **pin 4** for some. If a 64 × 64 panel shows only half its rows, try the other position. 64 × 32 and smaller panels don't use E, so either position works for them.
 
@@ -221,6 +234,9 @@ Tick **Upside down** for that port under the panel map. See [Some of my panels a
 
 ## The colors are wrong (red shows as blue, and so on)
 Panels don't all use the same color order. On the Settings page, under **Color Order**, click **Show color test on the wall**. Every panel shows a red, a green and a blue bar, labeled R, G and B. Change a port's color order until each bar matches its letter; the wall updates as you change it. Then click **Save & Reboot**. Each port has its own setting, so a wall of mixed panels works.
+
+## One panel is brighter, dimmer or a different tint
+It's probably from a different production lot. See [One of my panels doesn't match the others](#one-of-my-panels-doesnt-match-the-others).
 
 ## 64 × 64 panels show only every other block of rows
 The E line isn't reaching the panel. Set the E switch to the other position. See [What is the E switch for?](#what-is-the-e-switch-for)
