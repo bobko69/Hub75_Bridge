@@ -157,12 +157,12 @@ Settings page, **Brightness (%)**. The wall changes as you move the slider and t
 Click **Show fade test on the wall** to see the difference while you change them. Leave **Advanced color settings** alone unless you see a problem; each one has a short explanation on the page.
 
 ## One of my panels doesn't match the others
-Panels from different production lots can look a little brighter, dimmer or tinted next to each other, so a panel bought later often stands out. The **Panel Matching** page fixes this (firmware 2.8.0 or newer). Open it from the Settings page, under **Panel Layout**: **Match panels from different lots**.
+Panels from different production lots can look a little brighter, dimmer or tinted next to each other, so a panel bought later often stands out. The **Panel Matching** page fixes this (firmware 2.8.0 or newer; 2.8.1 matches dark scenes better). Open it from the Settings page, under **Panel Layout**: **Match panels from different lots**.
 
 1. **Show a test shade.** Click **Mid gray**. The whole wall turns one even gray, so the odd panel and its tint are easy to see. Every panel shows its port-panel label (2-3 = Port 2, Panel 3).
 2. **Put the odd panels in a lot.** Click **Lot B**, then click the odd panels on the map. Up to 3 extra lots (B, C and D) for panels from more batches.
 3. **Adjust until they match.** Turn the lot's **Red**, **Green** and **Blue** down with the sliders or with **−** and **+** (1 % steps). The wall changes right away. The chart on the page tells you which color to lower: a pinkish panel needs less red, a bluish one less blue, and one that's just brighter needs all three lowered. If the odd panel is the dimmer one, turn **Normal** down instead.
-4. **Check White and Dark gray.** If the panel still looks too bright in dark scenes, lower the lot's **Dark** level; it changes only the darker shades.
+4. **Check White and Dark gray.** If the panel still looks off in dark scenes, use the lot's **Dark red**, **Dark green** and **Dark blue** sliders; they change only the darker shades. Not red enough in the dark: raise Dark red. Too bright in the dark: lower all three.
 5. **Click Save.** Leaving the page without saving undoes your changes, and the test shade stops by itself after 15 minutes.
 
 Matching by eye takes some patience, and panels from different lots may never match perfectly on every shade. Match on **Mid gray**, which is closest to most video. Lots are kept in the settings backup. Changing the wall size puts every panel back in Normal.
